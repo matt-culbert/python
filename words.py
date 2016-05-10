@@ -90,7 +90,7 @@ class FileHandle:
 		structure.close()
 		mapping.close()
 
-	def structureMapping(tempSentence): # this maps the structure to essentially noun verb adjective, basic replace function
+	def structureMapping(tempSentence, nounsList, adverbsList, pronounsList, verbsList, adjectivesList): # this maps the structure to essentially noun verb adjective, basic replace function
 		try: # try to make our new file THIS WONT CATCH US OPENING WRONG FILE 
 			tempStruc = "tempStruc" + rand.int(1,100000000) + ".txt"
 		except *:
@@ -98,7 +98,6 @@ class FileHandle:
 			tempStruc = "tempStruc" + rand.int(1,100000000) + ".txt"
 		
 		temp = open(tempStruc, 'wb')
-		adjectiveList1 = open('adjectives.txt', 'rb')
 		
 		for line in tempSentence:
 			if line == adjectivesList:
@@ -118,7 +117,6 @@ class FileHandle:
 			
 			else print ("Word not in data base!")
 			
-		adjectiveList1.close()
 		temp.close()
 		
 	def structureScore(file): # function to create our score of most common structures, assumes we've opened a file already and are passing its contents to this 
@@ -126,13 +124,3 @@ class FileHandle:
 			if line.startswith("Adjective:"):
 				total = "Adjective: " + sum([int(num) for num in line]) 
 				line.write(total) # write the new total to the line 
-
-### MAIN BODY ###			
-while 1:
-	input = input("Type your sentence to analyze here: ")
-	try:
-		structureCount(input)
-		structureMapping(input)
-		structureScore(input)
-	except *:
-		print("Problem analyzing!")
