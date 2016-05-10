@@ -15,8 +15,6 @@ verbsList1 = open('verbs.txt', 'rb')
 pronounsList1 = open('pronouns.txt', 'rb')
 adverbsList1 = open('adverbs.txt', 'rb')
 nounsList1 = open('nouns.txt', 'rb')
-structure = open('structure.txt', 'wb')
-mapping = open('mapping.txt', 'wb')
 
 for line in adjectiveList1:
 	adjectivesList.append(line) # for every adjective in our file, append it to our list 
@@ -34,6 +32,9 @@ for line in nounsList1:
 	nounsList.append(line)  
 	
 def structureCount(tempSentence, nounsList, adverbsList, pronounsList, verbsList, adjectivesList): # this function simply counts the number of adverbs, adjectives, so on. Needs a sentence and the wordlists  
+	structure = open('structure.txt', 'wb')
+	mapping = open('mapping.txt', 'wb')
+
 	# word count 
 	nouns = 0
 	verbs = 0
@@ -79,7 +80,6 @@ def structureCount(tempSentence, nounsList, adverbsList, pronounsList, verbsList
 				
 		else print ('Bad word')
 		
-	wordlist.close()
 	structure.close()
 	mapping.close()
 
@@ -112,8 +112,17 @@ def structureMapping(tempSentence, nounsList, adverbsList, pronounsList, verbsLi
 		
 	temp.close()
 	
-def structureScore(file): # function to create our score of most common structures, assumes we've opened a file already and are passing its contents to this 
+def structureScore(file): # function to create our score of most common structures, requires structure.txt  
 	for line in file:
 		if line.startswith("Adjective:"):
 			total = "Adjective: " + sum([int(num) for num in line]) 
 			line.write(total) # write the new total to the line 
+		
+### MAIN BODY ###
+
+#close our files when done 		
+adjectivesList1.close()
+verbsList1.close()
+pronounsList1.close()
+adverbsList1.close()
+nounsList1.close()
