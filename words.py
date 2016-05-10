@@ -5,6 +5,10 @@ import glob
 
 def structureCount(tempSentence): # this function simply counts the number of adverbs, adjectives, so on 
 	adjectiveList1 = open('adjectives.txt', 'rb')
+	verbsList1 = open('verbs.txt', 'rb')
+	pronounsList1 = open('pronouns.txt', 'rb')
+	adverbsList1 = open('adverbs.txt', 'rb')
+	nounsList1 = open('nouns.txt', 'rb')
 	structure = open('structure.txt', 'wb')
 	mapping = open('mapping.txt', 'wb')
 	
@@ -23,6 +27,18 @@ def structureCount(tempSentence): # this function simply counts the number of ad
 
 
 	for line in adjectiveList1:
+		adjectivesList.append(line) # for every adjective in our file, append it to our list 
+		
+	for line in verbsList1:
+		adjectivesList.append(line) # for every adjective in our file, append it to our list 
+	
+	for line in pronounsList1:
+		adjectivesList.append(line) # for every adjective in our file, append it to our list
+		
+	for line in adverbsList1:
+		adjectivesList.append(line) # for every adjective in our file, append it to our list 
+		
+	for line in nounsList1:
 		adjectivesList.append(line) # for every adjective in our file, append it to our list 
 		
 	for line in tempSentence: #reads our temp sentence container
