@@ -30,6 +30,7 @@ adjectivesList = []
 
 for filename in os.listdir("C:\Users\Matt\Desktop\AI project"): # where I'm storing everything 
 	if filename.startswith("tempStruc"): # if our file starts with tempstruc 
+		struc = filename
 		
 		for line in struc:
 			if line == "adjective": # if it's an adjective 
