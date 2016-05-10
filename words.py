@@ -106,7 +106,7 @@ def structureScore(file): # function to create our score of most common structur
 
 ### MAIN BODY ###			
 while 1:
-	input = print("Type your sentence to analyze here: ")
+	input = input("Type your sentence to analyze here: ")
 	try:
 		structureCount(input)
 		structureMapping(input)
