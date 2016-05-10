@@ -117,7 +117,24 @@ def structureScore(file): # function to create our score of most common structur
 		if line.startswith("Adjective:"):
 			total = "Adjective: " + sum([int(num) for num in line]) 
 			line.write(total) # write the new total to the line 
-		
+			
+		else if line.startswith("Adjective:"):
+			total = "Adverb: " + sum([int(num) for num in line]) 
+			line.write(total) # write the new total to the line 
+			
+		else if line.startswith("Adjective:"):
+			total = "Verb: " + sum([int(num) for num in line]) 
+			line.write(total) # write the new total to the line 
+			
+		else if line.startswith("Adjective:"):
+			total = "Pronoun: " + sum([int(num) for num in line]) 
+			line.write(total) # write the new total to the line 
+			
+		else if line.startswith("Adjective:"):
+			total = "Noun: " + sum([int(num) for num in line]) 
+			line.write(total) # write the new total to the line 
+			
+		else print ("Wrong input file!")
 ### MAIN BODY ###
 
 #close our files when done 		
