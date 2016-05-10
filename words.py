@@ -19,6 +19,7 @@ def structureCount(tempSentence): # this function simply counts the number of ad
 	adverbsList = []
 	nounsList = []
 
+	# word count 
 	nouns = 0
 	verbs = 0
 	adverbs = 0
@@ -30,16 +31,16 @@ def structureCount(tempSentence): # this function simply counts the number of ad
 		adjectivesList.append(line) # for every adjective in our file, append it to our list 
 		
 	for line in verbsList1:
-		adjectivesList.append(line) # for every adjective in our file, append it to our list 
+		verbsList.append(line) 
 	
 	for line in pronounsList1:
-		adjectivesList.append(line) # for every adjective in our file, append it to our list
+		pronounsList.append(line)
 		
 	for line in adverbsList1:
-		adjectivesList.append(line) # for every adjective in our file, append it to our list 
+		adverbsList.append(line) 
 		
 	for line in nounsList1:
-		adjectivesList.append(line) # for every adjective in our file, append it to our list 
+		nounsList.append(line)  
 		
 	for line in tempSentence: #reads our temp sentence container
 		if line = adjectivesList: # if our word is in our adjectives list 
