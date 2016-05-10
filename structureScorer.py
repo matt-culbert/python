@@ -8,6 +8,8 @@ hasher = hashlib.md5()
 
 adjectiveList1 = open('adjectives.txt', 'rb')
 master = open('masterRecord.txt', 'wb')
+struc = open(filename, 'rb') # open the file if it begins with what we're looking for
+temp = opem("temp.txt", 'wb')
 
 adjective = 1
 noun = 2
@@ -28,8 +30,6 @@ adjectivesList = []
 
 for filename in os.listdir("C:\Users\Matt\Desktop\AI project"): # where I'm storing everything 
 	if filename.startswith("tempStruc"): # if our file starts with tempstruc 
-		struc = open(filename, 'rb') # open the file if it begins with what we're looking for
-		temp = opem("temp.txt", 'wb')
 		
 		for line in struc:
 			if line == "adjective": # if it's an adjective 
@@ -62,3 +62,10 @@ for filename in os.listdir("C:\Users\Matt\Desktop\AI project"): # where I'm stor
 			
 		for line in counter:
 			# need to write our counter to it so as to keep track of structure scoring
+			
+temp.close()
+struc.close()
+master.close()
+adjectiveList1.close()
+
+os.remove("temp.txt")
