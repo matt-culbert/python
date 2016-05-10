@@ -31,7 +31,7 @@ for line in adverbsList1:
 for line in nounsList1:
 	nounsList.append(line)  
 	
-def structureCount(tempSentence, nounsList, adverbsList, pronounsList, verbsList, adjectivesList): # this function simply counts the number of adverbs, adjectives, so on. Needs a sentence and the wordlists  
+def structureCount(tempSentence, nounsList, adverbsList, pronounsList, verbsList, adjectivesList): # this function simply counts the number of adverbs, adjectives, so on. Requires a sentence and the wordlists  
 	structure = open('structure.txt', 'wb')
 	mapping = open('mapping.txt', 'wb')
 
