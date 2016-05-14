@@ -137,6 +137,12 @@ def structureScore(file): # function to create our score of most common structur
 		else print ("Wrong input file!")
 ### MAIN BODY ###
 
+choice = input("Type a sentence to analyse: ")
+
+structureCount(choice, nounsList, adverbsList, pronounsList, verbsList, adjectivesList)
+structureMapping(choice, nounsList, adverbsList, pronounsList, verbsList, adjectivesList)
+structureScore("structure.txt")
+
 #close our files when done 		
 adjectivesList1.close()
 verbsList1.close()
