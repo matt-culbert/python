@@ -1,3 +1,7 @@
+'''
+Future additions:
+    basic firewalling
+'''
 import socket
 from struct import *
 import datetime
@@ -26,11 +30,11 @@ def geoip_search(IP):
     match = geolite2.lookup(IP)
     return match.country
 
-def main(argv):
+def main(argv, dev):
     #list all devices
     devices = pcapy.findalldevs()
     print devices
-
+    '''
     #ask user to enter device name to sniff
     print "Available devices are :"
     for d in devices :
@@ -39,7 +43,7 @@ def main(argv):
     dev = raw_input("Enter device name to sniff : ")
 
     print "Sniffing device " + dev
-
+    '''
     '''
     open device
     # Arguments here are:
@@ -116,7 +120,7 @@ def parse_packet(packet) :
 
         print str(protocol) + ' Source Address : ' + str(s_addr) + ' Destination Address : ' + str(d_addr)
         #*******EVENTS***********
-        # Too add: add location resolver to flag russia, eeu, and china IP prefixes 
+        # Too add: add location resolver to flag russia, eeu, and china IP prefixes
         if socket.inet_ntoa(iph[8]).startswith("192.168.2") and not socket.inet_ntoa(iph[9]).startswith("192.168.1.163"): # if DMZ is communicating with anything other than load balancer
             print ("DMZ BROKEN") #neeed to add email alert
             flagged_dict['Event'] = 'DMZ broken'
@@ -139,4 +143,11 @@ def parse_packet(packet) :
         else: print ('IPs already known' + s_addr + d_addr)
 
 if __name__ == "__main__":
-  main(sys.argv)
+  # main(sys.argv, en0)
+  # Run the sniffer on two interfaces in parallel
+  p1 = Process(target=main(sys.argv, en0))
+  p1.start()
+  p2 = Process(target=main(sys.argv, en1))
+  p2.start()
+  p1.join()
+  p2.join()
