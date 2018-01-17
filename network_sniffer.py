@@ -13,11 +13,6 @@ import sqlite3 as lite
 global1 = lite.connect('global.db')
 flagged1 = lite.connect('flagged.db')
 
-#with global1:
-
-#    cur = global1.cursor()
-#    cur.execute("CREATE TABLE Current_Traffic(Source_Address TEXT, Destination_Address TEXT, Source_Mac TEXT, Destination_Mac TEXT, )")
-
 global_dict={'source addresses': [''], 'destination addresses': [''], 'source mac': [''], 'destination mac': ['']} # empty dict to store new addresses in
 flagged_dict={'Event': [''], 'Source Addresses': [''], 'Destination Addresses': ['']}
 
@@ -35,16 +30,6 @@ def main(argv, dev):
     devices = pcapy.findalldevs()
     print devices
     '''
-    #ask user to enter device name to sniff
-    print "Available devices are :"
-    for d in devices :
-        print d
-
-    dev = raw_input("Enter device name to sniff : ")
-
-    print "Sniffing device " + dev
-    '''
-    '''
     open device
     # Arguments here are:
     #   device
@@ -57,7 +42,6 @@ def main(argv, dev):
     #start sniffing packets
     while(1) :
         (header, packet) = cap.next()
-        #print ('%s: captured %d bytes, truncated to %d bytes' %(datetime.datetime.now(), header.getlen(), header.getcaplen()))
         parse_packet(packet)
 
 #Convert a string of 6 characters of ethernet address into a dash separated hex string
