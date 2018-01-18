@@ -1,6 +1,7 @@
 """
 Usage : ./flood_udp <ip> <port> <second> 
 No error handling
+Forked from https://gist.github.com/Ananasr/e05f3286b6ab94ec2c5431e64832c13e
 """
 
 import time
