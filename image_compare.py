@@ -14,8 +14,8 @@ def mean_squared_error(image1, image2):
 
 	text = "Possible motion detected"
 	subject = "Pi security camera alert"
-	send_to = "matthew.culbert@mymail.champlain.edu"
-	send_from = "dicek6@gmail.com"
+	send_to = "test"
+	send_from = "test"
 
 	#Load images
 	original = cv2.imread("control.jpg", 0) # control file of what the house looks like
