@@ -8,10 +8,10 @@ class sentenceBuilder:
     #vowels = ('a','i','e','o','u')
     def __init__(self):
         # set Twitter API keys
-        self.consumer_key = 'YHH7gGaFW0vHZ23Mm9vXNrxIp'
-        self.consumer_secret = 'FqwTk1DL0DLUbyAhXQF81lyVo6DRysTkEVIxhhZgK4OebptsUg'
-        self.access_token = '496434978-Y8bhra1cqqggo806PvtYLelrbPhAhpHCSzlXGXQ2'
-        self.access_secret = 'Zgme9RDOMrQLSyaQopqKfOIL85NnI8bRkjWDwqSeJKgan'
+        self.consumer_key = '#'
+        self.consumer_secret = '#'
+        self.access_token = '#'
+        self.access_secret = '#'
         # Below used by word_len_dict()
         self.word_freq = []
         self.temp_dict = {}
