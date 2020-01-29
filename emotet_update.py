@@ -6,4 +6,4 @@ f = io.TextIOWrapper(u,encoding='utf-8')
 
 stream = f.read()
 
-match = re.match(r"(?<=<code>)(.*)(?=<\/code>)",stream)
+match = re.match(r"(?<=<code>)(.*?)(?=<\/code>)",stream)
